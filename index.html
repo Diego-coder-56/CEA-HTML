@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Negocio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="img/LOGUITO.png" alt="Logo" class="logo">
+            <span class="curso-nombre">Curso de Métricas Esenciales de Negocio</span>
+        </div>
+        <div class="pregunta-numero" id="pregunta-numero">Pregunta 1 de 3</div>
+        <button class="cerrar">X</button>
+    </header>
+
+    <!-- Barra de progreso minimalista debajo del header -->
+    <div class="barra-progreso">
+        <div class="progreso" id="progreso"></div>
+    </div>
+
+    <main class="contenido-examen">
+        <div class="pregunta-container">
+            <div class="pregunta" id="pregunta">¿Qué es el Big Mac Index?</div>
+        </div>
+
+        <div class="respuestas-container">
+            <div class="respuestas" id="respuestas">
+                <!-- Opciones generadas desde JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <div class="inferior">
+        <button id="saltar" class="boton">Saltar pregunta</button>
+        <div class="temporizador" id="temporizador">⏱ 22:59</div>
+        <button id="siguiente" class="boton">Siguiente</button>
+    </div>
+
+    <!-- Ventana Modal de Resumen de Respuestas -->
+    <div id="resumen-examen" class="modal hidden">
+        <div class="modal-content">
+            <h2>Estas son tus respuestas</h2>
+            <p>Puedes revisar y cambiar las respuestas. Al terminar presiona “Calificar respuestas” para enviar las preguntas y conocer tu puntuación.</p>
+            <ol id="lista-resumen"></ol> <!-- Aquí se llenará dinámicamente el resumen -->
+
+            <!-- Temporizador y botón de calificar en la parte inferior derecha -->
+            <div class="inferior">
+                <div class="temporizador-final" id="temporizador-final">⏱ 00:00</div>
+                <button id="calificar" class="calificar">Calificar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana Modal de Resultados Finales -->
+    <div id="modal-resumen" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Resumen del Examen</h2>
+            <div id="calificacion"></div>
+            <div id="aciertos"></div>
+            <button id="cerrar-resumen" class="boton">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+[
+  {
+      "pregunta": "¿Qué es el Big Mac Index?",
+      "respuestas": [
+          { "texto": "Una índice oficial utilizado por Fondos de Inversión" },
+          { "texto": "El valor de mercado en McDonalds" },
+          { "texto": "Todas son Incorrectas" },
+          { "texto": "Un índice del banco central de los Estados Unidos" },
+          { "texto": "Una herramienta para medir el poder adquisitivo en los diferentes países." }
+      ],
+      "correcta": 4
+  },
+  {
+    "pregunta": "¿Qué es el Big Mac Index?",
+    "respuestas": [
+        { "texto": "Una índice oficial utilizado por Fondos de Inversión" },
+        { "texto": "El valor de mercado en McDonalds" },
+        { "texto": "Todas son Incorrectas" },
+        { "texto": "Un índice del banco central de los Estados Unidos" },
+        { "texto": "Una herramienta para medir el poder adquisitivo en los diferentes países." }
+    ],
+    "correcta": 4
+},
+{
+  "pregunta": "¿Qué es el Big Mac Index?",
+  "respuestas": [
+      { "texto": "Una índice oficial utilizado por Fondos de Inversión" },
+      { "texto": "El valor de mercado en McDonalds" },
+      { "texto": "Todas son Incorrectas" },
+      { "texto": "Un índice del banco central de los Estados Unidos" },
+      { "texto": "Una herramienta para medir el poder adquisitivo en los diferentes países." }
+  ],
+  "correcta": 4
+}
+  
+]

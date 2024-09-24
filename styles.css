@@ -1,0 +1,379 @@
+/* Global Settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #101010;
+    color: #ffffff;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #1c1c1c;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.curso-nombre {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Estilo minimalista para la barra de progreso */
+.barra-progreso {
+    width: 80%;
+    height: 4px;
+    background-color: #2e2e2e;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto 20px auto;
+}
+
+.progreso {
+    height: 100%;
+    background: linear-gradient(to right, #00ff99, #00bfff);
+    border-radius: 3px;
+    transition: width 0.4s ease-in-out;
+}
+
+.pregunta-numero {
+    color: #fff;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.cerrar {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cerrar:hover {
+    background-color: #555;
+}
+
+.contenido-examen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
+.pregunta-container {
+    text-align: left;
+    width: 50%;
+}
+
+.pregunta {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.respuestas-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Estilo de las respuestas (incisos) */
+.respuestas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.respuestas button {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border: 1px solid #555;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    padding-left: 50px;
+}
+
+.respuestas button::before {
+    content: attr(data-inciso);
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #ccc;
+    background-color: #444;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.respuestas button:hover {
+    background-color: #444;
+    border-color: #777;
+}
+
+.respuestas button.selected {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    border-color: #888;
+}
+
+.respuestas button.selected::before {
+    background-color: #888;
+    color: #fff;
+}
+
+/* Estilos para respuestas correctas e incorrectas */
+.respuestas button.correct {
+    background-color: #2e7d32; /* Verde para respuestas correctas */
+    color: white;
+    border-color: #2e7d32;
+}
+
+.respuestas button.incorrect {
+    background-color: #c62828; /* Rojo para respuestas incorrectas */
+    color: white;
+    border-color: #c62828;
+}
+
+/* Botones de la parte inferior */
+.boton {
+    padding: 10px 20px;
+    background-color: #2b2b2b;
+    color: #ccc;
+    border: 1px solid #555;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.boton:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #777;
+}
+
+.boton:disabled {
+    background-color: #444;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.inferior {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 15px;
+    background-color: #1c1c1c;
+    margin: auto;
+}
+
+.temporizador {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* Ventana Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #1c1c1c;
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    color: #00ff99;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #bbb;
+}
+
+.modal-content ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.modal-content li {
+    display: flex;
+    flex-direction: column; /* Cambiado para que la respuesta esté abajo de la pregunta */
+    margin: 10px 0;
+    background-color: #2b2b2b;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.modal-content li span {
+    margin-bottom: 10px;
+}
+
+.modal-content li .respuesta-seleccionada {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.modal-content li button {
+    align-self: flex-end; /* Para que el botón "Cambiar" se alinee a la derecha */
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content li button:hover {
+    background-color: #555;
+}
+
+.modal-content li button:focus {
+    outline: none;
+}
+
+.calificar {
+    padding: 15px 30px;
+    background-color: #00ff99;
+    color: #101010;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px;
+}
+
+.calificar:hover {
+    background-color: #00cc80;
+}
+
+.temporizador-final {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Estilos para el examen */
+body {
+    background-color: #181818;
+    color: #ffffff;
+}
+
+header {
+    background-color: #202020;
+    padding: 15px;
+}
+
+.barra-progreso {
+    background-color: #2b2b2b;
+}
+
+.progreso {
+    background: linear-gradient(to right, #00ff99, #00bfff);
+}
+
+.pregunta {
+    color: #ffffff;
+}
+
+.respuestas button.correct {
+    background-color: #202020;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+}
+
+.respuestas button.incorrect {
+    background-color: #202020;
+    color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+}
+
+.respuestas button:hover {
+    background-color: #333;
+}
+
+.inferior {
+    background-color: #202020;
+}
+
+.temporizador {
+    color: #ffffff;
+}
